@@ -1,0 +1,7 @@
+{
+    "name": "exercism/php",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
+    }
+}
