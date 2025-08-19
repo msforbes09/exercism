@@ -26,10 +26,23 @@ declare(strict_types=1);
 
 function getAllColors(): array
 {
-    throw new \BadMethodCallException("Implement the getAllColors function");
+    return [
+        'black',
+        'brown',
+        'red',
+        'orange',
+        'yellow',
+        'green',
+        'blue',
+        'violet',
+        'grey',
+        'white',
+    ];
 }
 
 function colorCode(string $color): int
 {
-    throw new \BadMethodCallException("Implement the colorCode function");
+    $colors = getAllColors();
+
+    return array_search($color, $colors);
 }
