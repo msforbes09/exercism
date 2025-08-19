@@ -26,5 +26,20 @@ declare(strict_types=1);
 
 function distance(string $strandA, string $strandB): int
 {
-    throw new \BadFunctionCallException("Implement the distance function");
+    $diff = 0;
+
+    $arrayA = str_split($strandA);
+    $arrayB = str_split($strandB);
+
+    if (count($arrayA) != count($arrayB)) {
+        throw new InvalidArgumentException('strands must be of equal length');
+    }
+
+    for ($i = 0; $i < count($arrayA); $i++) {
+        if ($arrayA[$i] != $arrayB[$i]) {
+            $diff++;
+        }
+    }
+
+    return $diff;
 }
