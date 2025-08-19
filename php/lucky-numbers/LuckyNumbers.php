@@ -4,16 +4,26 @@ class LuckyNumbers
 {
     public function sumUp(array $digitsOfNumber1, array $digitsOfNumber2): int
     {
-        throw new \BadFunctionCallException("Implement the function");
+        return (int) implode('', $digitsOfNumber1) + (int) implode('', $digitsOfNumber2);
     }
 
     public function isPalindrome(int $number): bool
     {
-        throw new \BadFunctionCallException("Implement the function");
+        $originalNumber = (string) $number;
+
+        return strrev($originalNumber) == $originalNumber;
     }
 
     public function validate(string $input): string
     {
-        throw new \BadFunctionCallException("Implement the function");
+        if (!strlen($input)) {
+            return 'Required field';
+        }
+
+        if ((int) $input < 1) {
+            return 'Must be a whole number larger than 0';
+        }
+
+        return '';
     }
 }
