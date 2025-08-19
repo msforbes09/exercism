@@ -28,6 +28,29 @@ class ResistorColorDuo
 {
     public function getColorsValue(array $colors): int
     {
-        throw new \BadMethodCallException(sprintf('Implement the %s method', __FUNCTION__));
+        $code = '';
+
+        $colorCodes = [
+            'black',
+            'brown',
+            'red',
+            'orange',
+            'yellow',
+            'green',
+            'blue',
+            'violet',
+            'grey',
+            'white',
+        ];
+
+        foreach ($colors as $value) {
+            $code .= array_search($value, $colorCodes);
+
+            if (strlen($code) == 2) {
+                break;
+            }
+        }
+
+        return (int) $code;
     }
 }
